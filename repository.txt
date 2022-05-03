@@ -1,0 +1,11 @@
+package com.generation.blogpessoalone.reposity;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.generation.blogpessoalone.Postagem1;
+
+@Repository
+public interface Postagem1Repository extends JpaRepository<Postagem1,Long>{
+
+}

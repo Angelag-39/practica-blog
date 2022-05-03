@@ -1,0 +1,30 @@
+package com.generation.blogpessoalone.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import  com.generation.blogpessoalone.Postagem1;
+import com.generation.blogpessoalone.reposity.Postagem1Repository;
+
+@RestController
+@RequestMapping("/postagens1")
+@CrossOrigin(origins="*", allowedHeaders = "*")
+ public class PostagemController1 {
+	
+	@Autowired
+	private Postagem1Repository postagem1Repository;
+	
+	@GetMapping
+	public ResponseEntity <List <Postagem1>> getAll(){
+		return ResponseEntity.ok(postagem1Repository.findAll());
+		
+		//select*from tb_postagens;
+		
+	}
+	
+}
